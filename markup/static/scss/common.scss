@@ -4,19 +4,41 @@ html, body {
     height: 100%;
 }
 
-.page {
-    
+body{
+    min-width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    font-family: "Open Sans", Arial, sans-serif;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+ul{
+    list-style-type: none;
 }
 
 .page__wrapper {
     min-height: 100%;
+    margin: 0 auto;
     margin-bottom: -50px;
+    background-color: #f4f4f4;
+    text-align: center;
+    background-image: url("%=static=%general/lt.png"), url("%=static=%general/rt.png"), url("%=static=%general/lb.png"), url("%=static=%general/rb.png");
+    background-size: 20%, 10%, 20%, 25%;
+    background-position: left top, right top, left bottom, right bottom ;
+    background-repeat: no-repeat;
 }
 
 * html .page__wrapper {
     height: 100%;
-}
-
-.page__buffer {
-    height: 50px;
 }

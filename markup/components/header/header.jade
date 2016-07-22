@@ -1,0 +1,31 @@
+mixin header(data)
+    .page__wrapper
+        .header
+            .header__logo
+                a.header__logoLink(href="/")
+            .header__right
+                .header__reg
+                    a.header__regbtn(href="#") Вхід
+                    a.header__regbtn(href="#") Реєстрація
+                    a.header__langbtn(href="#") укр
+                    a.header__langbtn(href="#") рус
+                .header__search
+                    form.search.modif(action="#")
+                        input.search__input(type="search" placeholder="Пошук:")
+                        input.search__icon(type="submit")
+                .header__nav
+                    ul.nav
+                        li.nav__item
+                            a.nav__img(href="#")
+                        li.nav__item
+                            a.nav__text(href="#") Аукціон
+                        li.nav__item
+                            a.nav__text(href="#") Купити
+                        li.nav__item
+                            a.nav__text(href="#") Продати
+                        li.nav__item
+                            a.nav__text(href="#") Правила аукціону
+                        li.nav__item
+                            a.nav__text(href="#") Тарифи
+                        li.nav__item
+                            a.nav__text(href="#") Новини

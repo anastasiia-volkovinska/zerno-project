@@ -1,25 +1,22 @@
 doctype html
-html(class="no-js", lang="ru")
-
-    include ../components/head/head
-    include ../components/footer/footer
+html(lang="en")
+    
+    //- Includes
+    block includes
+        include ../components/head/head
+        include ../components/header/header
 
     head
         +head(head.defaults)
-    body.page
-        |%=symbols=%
 
-        section.page__wrapper
-
-            //- Include your components here
-
-            .page__buffer
-
-        .page__footer
-            +footer()
-
+    body
+        block header
+            +header(header.defaults)
+            
+        block page
+        //- Scripts
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js")
         script(src='%=static=%js/separate-js/svg4everybody.min.js')
         script svg4everybody();
-
-        //- Main scripts. You can replace it, but I recommend you to leave it here
-        script(src='%=static=%js/main%=hash=%%=min=%.js')
+        script(src='%=static=%js/main%=hash=%%=min=%.js') 
+        
