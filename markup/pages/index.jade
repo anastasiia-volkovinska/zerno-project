@@ -1,4 +1,6 @@
+extends _template
+
 include ../components/main_content/main_content
 
-extends _template
 block page
+    +main_content(main_content.defaults)

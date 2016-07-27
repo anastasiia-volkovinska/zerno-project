@@ -1,0 +1,26 @@
+mixin product__item(data)
+    each item in data.items
+        li.product__item
+            .product__item_left
+                a.product__item_title(href = "#{item.href}") #{item.title}
+                p.product__item_region #{item.region1}
+                p.product__item_region #{item.region2}
+                p.product__item_region #{item.region3}
+                p.product__item_name #{item.name}
+                p.product__item_phone #{item.phone}
+            .product__item_right
+                p.product__item_weight #{item.weight}
+                p.product__item_price #{item.price}
+                ul.cities
+                    li.cities__item
+                        p.cities__text #{item.cities__text1}
+                        p.cities__button #{item.cities__button1}
+                    li.cities__item
+                        p.cities__text #{item.cities__text2}
+                        p.cities__button #{item.cities__button2}
+                    li.cities__item
+                        p.cities__text #{item.cities__text3}
+                        p.cities__button #{item.cities__button3}
+                a.product__item_button(href="#") Детальніше
+                
+        

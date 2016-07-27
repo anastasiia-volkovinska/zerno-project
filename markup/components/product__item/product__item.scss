@@ -1,0 +1,90 @@
+
+.product__item{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #fff;
+    flex-basis: 46%;
+    box-shadow: 0 2px 5px #cccccc;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    &_left{
+        display: flex;
+        flex-direction: column;
+        flex-basis: 49%;
+        align-items: flex-start;
+    }
+    &_right{
+        display: flex;
+        flex-direction: column;
+        flex-basis: 49%;
+        align-items: flex-start;
+    }
+    &_title{
+        color: #000;
+        font-weight: 800;
+        font-size: 18px;
+    }
+    &_region{
+        margin: 1px;
+        font-size: 13px;
+    }
+    &_name{
+        margin: 1px;
+        font-size: 13px;
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 1px;
+            background: #333;
+            opacity: .2;
+            left: 0;
+        }
+    }
+    &_phone{
+        margin: 0;
+        font-size: 13px;
+    }
+    &_weight{
+        display: inline-block;
+        color: #000;
+        font-weight: 800;
+        font-size: 18px;
+        margin: 0;
+    }
+    &_price{
+        display: inline-block;
+        color: #000;
+        font-weight: 800;
+        font-size: 18px;
+        margin: 0;
+    }
+    &_button{
+        @extend %btn;
+        border-radius: 15px;
+        color: #fff;
+        background-color: $brown;
+    }
+}
+
+.cities{
+    padding-left: 0;
+    &__item{
+        display: inline-block;
+        font-size: 13px;
+        margin: 5px;
+    }
+    &__button{
+        width: 55px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+    }
+    &__text{
+        margin: 3px;
+    }
+}

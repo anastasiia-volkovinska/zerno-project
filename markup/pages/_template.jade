@@ -5,15 +5,20 @@ html(lang="en")
     block includes
         include ../components/head/head
         include ../components/header/header
+        include ../components/footer/footer
 
     head
         +head(head.defaults)
 
     body
-        block header
-            +header(header.defaults)
+        .page__wrapper
+            block header
+                +header(header.defaults)
             
-        block page
+            block page
+                
+            block footer
+                +footer()
         //- Scripts
         script(src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js")
         script(src='%=static=%js/separate-js/svg4everybody.min.js')

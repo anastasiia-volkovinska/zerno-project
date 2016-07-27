@@ -1,2 +1,15 @@
+include ../product__item/product__item
+
 mixin main_content(data)
     .main_content
+        .main__title
+            h4.main__title_small Український
+            h2.main__title_big аграрний торговий майданчик
+            p.main__title_text Купівля та продаж продукції агропромисловості 
+            p.main__title_text у зручний час та у зручному місці
+            .main__title_img
+        .main__products
+            ul.products
+                +product__item(product__item.defaults)
+
+        

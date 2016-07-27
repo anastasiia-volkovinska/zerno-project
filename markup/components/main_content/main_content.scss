@@ -1,1 +1,78 @@
+.main_content{
+    width: 1080px;
+    margin: 0 auto;
+}
 
+.main__title{
+    padding: 20px;
+    text-align: center;
+    &_small{
+        font-size: 23px;
+        line-height: 25px;
+        text-transform: uppercase;
+        color: #333;
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            width: 306px;
+            height: 1px;
+            background: #333;
+            opacity: .2;
+            left: 75px;
+            top: 12px;
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            width: 306px;
+            height: 1px;
+            background: #333;
+            opacity: .2;
+            right: 75px;
+            top: 12px;
+        }
+    }
+    &_big{
+        font-size: 45px;
+        line-height: 48px;
+        color: #333;
+        text-transform: uppercase;
+    }
+    &_text{
+        font-size: 19px;
+        line-height: 16px;
+        color: #333;
+    }
+    &_img{
+        @include bg-svg($wheat);
+        position: relative;
+        margin: 0 auto;
+        &::before{
+            content: "";
+            position: absolute;
+            width: 306px;
+            height: 1px;
+            background: #333;
+            opacity: .2;
+            left: 210px;
+            top: 12px;
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            width: 306px;
+            height: 1px;
+            background: #333;
+            opacity: .2;
+            right: 210px;
+            top: 12px;
+        }
+    }
+}
+
+.products{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
