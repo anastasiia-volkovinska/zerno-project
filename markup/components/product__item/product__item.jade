@@ -6,11 +6,28 @@ mixin product__item(data)
                 p.product__item_region #{item.region1}
                 p.product__item_region #{item.region2}
                 p.product__item_region #{item.region3}
-                p.product__item_name #{item.name}
-                p.product__item_phone #{item.phone}
+                //- p.product__item_name #{item.name}
+                //- p.product__item_phone #{item.phone}
             .product__item_right
-                p.product__item_weight #{item.weight}
-                p.product__item_price #{item.price}
+                ul.parameters
+                    li.parameters__item
+                        p.parameters__item_text.price Поточна ціна: 
+                            a.parameters__item_link.price(href="#") #{item.price}
+                    li.parameters__item
+                        p.parameters__item_text.little * Ціни вказані з ПДВ
+                    li.parameters__item
+                        p.parameters__item_text Кількість: 
+                            a.parameters__item_link(href="#") #{item.weight}
+                    li.parameters__item
+                        p.parameters__item_text Ставки: 
+                            a.parameters__item_link(href="#") 35
+                    li.parameters__item
+                        p.parameters__item_text Залишилось днів: 
+                            a.parameters__item_link(href="#") 3
+                    li.parameters__item
+                        p.parameters__item_text Комeнтарі: 
+                            a.parameters__item_link.comments(href="#") 7
+            .product__item_down
                 ul.cities
                     li.cities__item
                         p.cities__text #{item.cities__text1}
@@ -21,6 +38,6 @@ mixin product__item(data)
                     li.cities__item
                         p.cities__text #{item.cities__text3}
                         p.cities__button #{item.cities__button3}
-                a.product__item_button(href="#") Детальніше
+            a.product__item_button(href="#") Детальніше
                 
         

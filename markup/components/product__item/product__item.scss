@@ -4,75 +4,100 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    background-color: #fff;
+    background: rgba(255, 255, 255, 0.8);
     flex-basis: 46%;
     box-shadow: 0 2px 5px #cccccc;
+    //background-color: #f4f4f4;
     border-radius: 10px;
     margin: 20px;
     padding: 20px;
+    @media screen and (max-width: 650px){
+        flex-basis: 100%;
+        padding: 7px;
+    }
+    &:hover{
+        box-shadow: 0 7px 15px #cccccc;
+    }
+    &:focus{
+        box-shadow: 0 7px 15px #cccccc;
+    }
     &_left{
         display: flex;
         flex-direction: column;
+        flex-wrap: wrap;
         flex-basis: 49%;
         align-items: flex-start;
+        margin-bottom: 10px;
+        padding-left: 30px;
+        @media screen and (max-width: 1080px){
+            flex-basis: 100%;
+            align-items: center;
+        }
     }
     &_right{
         display: flex;
         flex-direction: column;
+        flex-wrap: wrap;
         flex-basis: 49%;
         align-items: flex-start;
+        margin-bottom: 10px;
+        padding-left: 30px;
+        @media screen and (max-width: 1080px){
+            flex-basis: 100%;
+            align-items: center;
+            border-top: 1px solid #ccc;
+        }
+    }
+    &_down{
+        display: flex;
+        flex-basis: 100%;
+        align-items: center;
+        border-top: 1px solid #ccc;
+        @media screen and (max-width: 650px){
+            margin-left: 10px;
+        }
     }
     &_title{
         color: #000;
         font-weight: 800;
-        font-size: 18px;
+        font-size: 16px;
     }
     &_region{
         margin: 1px;
-        font-size: 13px;
+        font-size: 14px;
     }
     &_name{
         margin: 1px;
-        font-size: 13px;
+        font-size: 14px;
         position: relative;
-        &::before{
-            content: "";
-            position: absolute;
-            width: 180px;
-            height: 1px;
-            background: #333;
-            opacity: .2;
-            left: 0;
-        }
     }
     &_phone{
         margin: 0;
-        font-size: 13px;
-    }
-    &_weight{
-        display: inline-block;
-        color: #000;
-        font-weight: 800;
-        font-size: 18px;
-        margin: 0;
-    }
-    &_price{
-        display: inline-block;
-        color: #000;
-        font-weight: 800;
-        font-size: 18px;
-        margin: 0;
+        margin-bottom: 3px;
+        font-size: 14px;
     }
     &_button{
         @extend %btn;
+        margin-top: 10px;
         border-radius: 15px;
         color: #fff;
         background-color: $brown;
+        box-shadow: inset 0 0 10px #eeeeee, 0 2px 4px #aaaaaa;
+        border-bottom: 1px solid #9e744a;
+        &:hover{
+            background-color: darken($brown, 10%);
+            box-shadow: inset 0 3px 7px #333;
+        }
+        &:focus{
+            background-color: darken($brown, 10%);
+            box-shadow: inset 0 3px 7px #333;
+        }
     }
 }
 
 .cities{
     padding-left: 0;
+    margin: auto;
     &__item{
         display: inline-block;
         font-size: 13px;
@@ -81,10 +106,62 @@
     &__button{
         width: 55px;
         padding: 5px;
+        margin: 0 auto;
+        margin-bottom: 5px;
         border: 1px solid #ccc;
         border-radius: 15px;
     }
     &__text{
         margin: 3px;
+    }
+}
+.parameters{
+    padding-left: 0;
+    text-align: left;
+    @media screen and (max-width: 1080px){
+        text-align: center;
+    }
+    &__item_text{
+        margin: 0;
+        font-size: 14px;
+        &.little{
+            font-weight: 200;
+        }
+    }
+    &__item_link{
+        margin: 0;
+        font-size: 14px;
+        color: black;
+        &:hover{
+            font-weight: bold;
+        }
+        &:focus{
+            font-weight: bold;
+        }
+        &.price{
+            font-weight: 800;
+            color: $green;
+            font-size: 16px;
+        }
+        &.comments{
+            position: relative;
+            display: inline-block;
+            z-index: 2;
+            padding-left: 5px;
+            &::after{
+                content: "";
+                display: block;
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                background-image: url("%=static=%general/comments.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                z-index: 0;
+                opacity: .5;
+                right: -8px;
+                top: 2px;
+            }
+        }
     }
 }

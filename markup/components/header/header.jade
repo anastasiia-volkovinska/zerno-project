@@ -1,13 +1,13 @@
 mixin header(data)
         .header
-            .header__logo
-                a.header__logoLink(href="/")
+            a.header__logo(href="/")
+                img.header__logoImg(src="%=static=%img/general/logo.png" alt="")
             .header__right
                 .header__reg
                     a.header__regbtn(href="#") Вхід
                     a.header__regbtn(href="#") Реєстрація
                     a.header__langbtn(href="#") укр
-                    a.header__langbtn(href="#") рус
+                    a.header__langbtn(href="#") eng
                 .header__search
                     form.search.modif(action="#")
                         input.search__input(type="search" placeholder="Пошук:")

@@ -4,30 +4,53 @@
     width: 1080px;
     margin: 0 auto;
     height: 118px;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.8);
     padding: 0 20px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     box-shadow: 0 2px 8px #cccccc;
+    margin-bottom: 30px;
+    @media screen and (max-width: 1080px){
+        width: 95%;
+        height: 150px;
+        padding: 0 8px;
+    }
     &__logo {
         padding-top: 20px;
         padding-left: 40px;
         float: left;
-    }
-    &__logoLink {
-        @include bg-svg($logo);
-        display: block;
         max-width: 140px;
         max-height: 75px;
+        display: block;
+        @media screen and (max-width: 1080px){
+            padding-left: 0;
+            max-width: 100px;
+            max-height: 55px;
+        }
+        @media screen and (max-width: 650px){
+            max-width: 60px;
+            max-height: 30px;
+            padding-top: 10px;
+            margin-left: 10px;
+        }
+    }
+    &__logoImg {
+        @extend %img;
     }
     &__right {
         padding-left: 250px;
+        @media screen and (max-width: 1080px){
+            padding-left: 10px;
+        }
     }
     &__reg {
         height: 35px;
         padding: 5px 0;
         text-align: right;
         border-bottom: 1px solid #cccccc;
+        @media screen and (max-width: 1080px){
+            border-bottom: none;
+        }
     }
     &__regbtn {
         font-size: 13px;
@@ -67,7 +90,15 @@
     margin: 0;
     &__item{
         display: inline-block;
-        padding: 10px;
+        padding: 7px;
+        border: 1px solid transparent;
+        border-radius: 15px;
+        &:hover{
+            border: 1px solid $green;
+        }
+        &:focus{
+            border: 1px solid $green;
+        }
     }
     &__img {
         @include bg-svg($home);
@@ -97,6 +128,7 @@
     margin-right: 40px;
     &__input {
         @extend %input;
+        background-color: #fdf9ef;
         display: block;
         box-sizing: border-box;
         width: 100%;
@@ -125,6 +157,9 @@
         background-image: url("%=static=%assets/header/btn-search.png");
         background-size: contain;
         background-repeat: no-repeat;
+        @media screen and (max-width: 1080px){
+            display: none;
+        }
     }
 
 }

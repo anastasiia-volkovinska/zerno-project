@@ -1,17 +1,29 @@
 .main_content{
     width: 1080px;
     margin: 0 auto;
+    @media screen and (max-width: 1080px){
+        width: 95%;
+    }
 }
 
 .main__title{
     padding: 20px;
     text-align: center;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 8px #cccccc;
+    margin-bottom: 30px;
     &_small{
         font-size: 23px;
         line-height: 25px;
         text-transform: uppercase;
         color: #333;
         position: relative;
+        @media screen and (max-width: 1080px){
+            font-size: 14px;
+            line-height: 18px;
+            margin: 0;
+        }
         &::before{
             content: "";
             position: absolute;
@@ -21,6 +33,9 @@
             opacity: .2;
             left: 75px;
             top: 12px;
+            @media screen and (max-width: 1080px){
+                content: none;
+            }
         }
         &::after{
             content: "";
@@ -31,6 +46,9 @@
             opacity: .2;
             right: 75px;
             top: 12px;
+            @media screen and (max-width: 1080px){
+                content: none;
+            }
         }
     }
     &_big{
@@ -38,14 +56,25 @@
         line-height: 48px;
         color: #333;
         text-transform: uppercase;
+        @media screen and (max-width: 1080px){
+            font-size: 18px;
+            line-height: 24px;
+        }
     }
     &_text{
         font-size: 19px;
         line-height: 16px;
         color: #333;
+        @media screen and (max-width: 1080px){
+            font-size: 14px;
+        }
     }
     &_img{
-        @include bg-svg($wheat);
+        //@include bg-svg($wheat);
+        width: 150px;
+        height: 45px;
+        background-image: url("%=static=%general/wheat.png");
+        background-size: cover;
         position: relative;
         margin: 0 auto;
         &::before{
@@ -57,6 +86,9 @@
             opacity: .2;
             left: 210px;
             top: 12px;
+            @media screen and (max-width: 1080px){
+                content: none;
+            }
         }
         &::after{
             content: "";
@@ -67,12 +99,56 @@
             opacity: .2;
             right: 210px;
             top: 12px;
+            @media screen and (max-width: 1080px){
+                content: none;
+            }
         }
     }
 }
 
 .products{
+    padding-left: 0;
+    margin: 0;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.main__button{
+    @extend %btn;
+    width: 220px;
+    height: 60px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 20px;
+    border-bottom: 1px solid #9e744a;
+    border-radius: 25px;
+    background-image: linear-gradient(top, #bb814a 0%, #724f2d 100%);
+    background-image: -moz-linear-gradient(top, #bb814a 0%, #724f2d 100%);
+    box-shadow: inset 0 0 10px #eeeeee, 0 2px 4px #aaaaaa;
+    margin-right: 150px;
+    margin-left: 150px;
+    padding-top: 15px;
+    margin-bottom: 10px;
+    @media screen and (max-width: 750px){
+        margin: auto;
+        margin-bottom: 10px;
+    }
+    &:hover{
+        box-shadow: inset 0 3px 7px #333;
+    }
+    &:focus{
+        box-shadow: inset 0 3px 7px #333;
+    }
+    &.green{
+        background-image: linear-gradient(top, #87a437 21%, #4a591e 100%);
+        background-image: -moz-linear-gradient(top, #87a437 21%, #4a591e 100%);
+        border-bottom: 1px solid #657437;
+        &:hover{
+            box-shadow: inset 0 3px 7px #333;
+        }
+        &:focus{
+            box-shadow: inset 0 3px 7px #333;
+        }
+    }
 }
